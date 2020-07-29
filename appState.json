@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "DayZeroPreboarding.py",
         "cursor": {
-          "lineNumber": 95,
-          "column": 5
+          "lineNumber": 131,
+          "column": 36
         },
         "config": {
           "runtime": "python3.8",
@@ -63,7 +63,14 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "ask_sdk_core": {
+          "name": "ask_sdk_core",
+          "version": "1.13.0",
+          "dev": false,
+          "language": "python"
+        }
+      }
     }
   },
   "PROJECT_META": {

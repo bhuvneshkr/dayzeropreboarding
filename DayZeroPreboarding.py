@@ -40,6 +40,99 @@ class LaunchRequestHandler(AbstractRequestHandler):
         )
 
 
+####
+#### This handler allows us to register the user's role as a current employee
+#### or a new hire.
+####
+
+class RegisterRoleIntentHandler(AbstractRequestHandler):
+    """Handler for Hello World Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("RegsiterRoleIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        
+        role = handler_input.request_envelope.request.intent.slots["name"].value
+        
+        attributes_manager = handler_input.attributes_manager
+        
+        attributes_manager.persistent_attributes = role
+        attributes_manager.save_persistent_attributes()
+        
+        speak_output = "Confirmed your role as " + role
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
+
+
+####
+#### As an Amazonian, register a new hire's information.
+####
+
+class RegisterNewHireIntentHandler(AbstractRequestHandler):
+    """Handler for Hello World Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("RegsiterNewHireIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        
+        role = handler_input.attributes_manager.persistent_attributes['role']
+        name = handler_input.request_envelope.request.intent.slots["name"].value
+        
+        speak_output = role + "Alright, I have successfully registered " + name
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
+
+
+
+####
+#### As a new hire, ask for your start date.
+####
+
+class SayStartDateIntentHandler(AbstractRequestHandler):
+    """Handler for Hello World Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("RegsiterRoleIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        
+        role = handler_input.request_envelope.request.intent.slots["name"].value
+        
+        
+        
+        speak_output = "Confirmed your role as " + role
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
+
+
+
+
+####
+#### As an Amazonian invite another coworker into your current call/meeting.
+####
+
+
+
 
 
 class HelpIntentHandler(AbstractRequestHandler):
@@ -160,6 +253,8 @@ sb.add_request_handler(SessionEndedRequestHandler())
 sb.add_request_handler(IntentReflectorHandler()) # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
 
 sb.add_exception_handler(CatchAllExceptionHandler())
+
+
 
 def handler(event, context):
     
