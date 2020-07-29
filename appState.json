@@ -1,0 +1,86 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "fc9f94e5-8c77-4262-8da8-67893613b5c5": {
+        "id": "fc9f94e5-8c77-4262-8da8-67893613b5c5",
+        "parent": null,
+        "name": "DayZeroPreboarding.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "DayZeroPreboarding.py",
+        "cursor": {
+          "lineNumber": 95,
+          "column": 5
+        },
+        "config": {
+          "runtime": "python3.8",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": [],
+          "name": "DayZeroPreboarding"
+        },
+        "triggers": [
+          {
+            "resourceName": "alexaSK28c4ff810d7a48468d1776c90075c640",
+            "config": {}
+          }
+        ]
+      }
+    },
+    "openFiles": [
+      "fc9f94e5-8c77-4262-8da8-67893613b5c5"
+    ],
+    "currentFileId": "fc9f94e5-8c77-4262-8da8-67893613b5c5",
+    "resources": {
+      "alexaSK28c4ff810d7a48468d1776c90075c640": {
+        "name": "alexaSK28c4ff810d7a48468d1776c90075c640",
+        "type": "ALEXA",
+        "config": {
+          "type": 1,
+          "verifiedID": true,
+          "skillID": "amzn1.ask.skill.28c4ff81-0d7a-4846-8d17-76c90075c640",
+          "applicationID": ""
+        }
+      }
+    },
+    "customTemplate": {
+      "syntax": "JSON",
+      "overrideDefault": false,
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "sigmaVersion": "1.4.1.1",
+    "projectName": "DayZeroPreboarding",
+    "projectDescription": "Alexa Skill",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "language": "python",
+    "platformRegions": {}
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "dayzeropreboarding",
+      "url": "https://github.com/bhuvneshkr/dayzeropreboarding"
+    }
+  }
+}
